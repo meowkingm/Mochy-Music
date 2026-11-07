@@ -143,9 +143,6 @@ private fun DonateSheetContent() {
                 letterSpacing = (-0.3).sp,
                 color = DonateSoftText,
             )
-                letterSpacing = (-0.3).sp,
-                color = DonateSoftText,
-            )
             Spacer(Modifier.height(12.dp))
         }
     }
