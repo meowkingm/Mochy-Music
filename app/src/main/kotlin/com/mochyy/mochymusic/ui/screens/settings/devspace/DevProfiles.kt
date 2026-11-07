@@ -48,9 +48,9 @@ import coil3.compose.AsyncImage
 import coil3.request.ImageRequest
 import coil3.request.transformations
 import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.DiscordUrl
+import com.mochyy.mochymusic.core.updater.GithubProfileUrl
 import com.mochyy.mochymusic.core.updater.InstagramUrl
-import com.mochyy.mochymusic.core.updater.ThreadsUrl
+import com.mochyy.mochymusic.core.updater.TelegramUrl
 import com.mochyy.mochymusic.ui.component.LocalZoomOutOverlayState
 import com.mochyy.mochymusic.ui.component.pressBounce
 import com.mochyy.mochymusic.ui.screens.donate.showDonateSheet
@@ -70,20 +70,15 @@ internal data class DevPerson(
 
 internal val DevPeople = listOf(
     DevPerson(
-        name = "idkroo",
-        bio = "ui ux guy here uhh idk what to write here, pls star the repo",
-        avatar = R.drawable.frame_51_3,
-        takesDonations = true,
+        name = "Ritesh",
+        bio = "Developer of AppleMusicPlus",
+        avatar = R.drawable.person_dev,
+        takesDonations = false,
         socials = listOf(
             DevSocial("Instagram", InstagramUrl),
-            DevSocial("Discord", DiscordUrl),
-            DevSocial("Threads", ThreadsUrl),
+            DevSocial("Telegram", TelegramUrl),
+            DevSocial("GitHub", GithubProfileUrl),
         ).filter { it.url.isNotBlank() },
-    ),
-    DevPerson(
-        name = "Keycii",
-        bio = "Hi hello hi",
-        avatar = R.drawable.dev_keycii,
     ),
 )
 
@@ -94,7 +89,7 @@ internal fun DevAvatar(person: DevPerson, modifier: Modifier = Modifier) {
         painter = painterResource(person.avatar),
         contentDescription = person.name,
         contentScale = ContentScale.Crop,
-        modifier = modifier.clip(CircleShape).background(Color(0xFFD9D9D9)),
+        modifier = modifier.clip(CircleShape).background(Color(0xFF2A2A2A)),
     )
 }
 

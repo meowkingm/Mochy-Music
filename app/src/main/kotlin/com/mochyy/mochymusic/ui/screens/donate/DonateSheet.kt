@@ -42,13 +42,12 @@ import com.mochyy.mochymusic.R
 import com.mochyy.mochymusic.ui.component.PopupSheetState
 import com.mochyy.mochymusic.ui.component.pressBounce
 import com.mochyy.mochymusic.ui.player.menu.MenuRowSurface
+import com.mochyy.mochymusic.core.updater.GithubProfileUrl
+import com.mochyy.mochymusic.core.updater.InstagramUrl
+import com.mochyy.mochymusic.core.updater.TelegramUrl
 import com.mochyy.mochymusic.ui.screens.update.VersionRing
 import com.mochyy.mochymusic.ui.screens.update.openUrl
 import com.mochyy.mochymusic.ui.component.RemoteFocus
-
-const val KofiUrl = "https://ko-fi.com/realidkroo"
-const val SocialBuzzUrl = "https://sociabuzz.com/realidkroo/tribe"
-const val BuyMeACoffeeUrl = "https://buymeacoffee.com/realkeichii"
 
 // the title tucks up over her faded bottom by this much, like the mock
 private val TitleOverlap = 18.dp
@@ -58,7 +57,7 @@ fun PopupSheetState.showDonateSheet() {
     val popup = this
     show(
         fullBleed = true,
-        buttonBar = { DonatePillButton(text = "what no i dont want to", onClick = popup::dismiss, quiet = true) },
+        buttonBar = { DonatePillButton(text = "Close", onClick = popup::dismiss, quiet = true) },
     ) {
         DonateSheetContent()
     }
@@ -72,7 +71,7 @@ private fun DonateSheetContent() {
         val characterWidth = characterWidth(maxWidth, maxHeight)
 
         VersionRing(
-            text = "MOCHY MUSIC",
+            text = "APPLEMUSICPLUS",
             modifier = Modifier
                 .align(Alignment.TopEnd)
                 // centred just in from the top-right corner so the sheet's edge cuts it off, and takes no room of its own
@@ -97,7 +96,7 @@ private fun DonateSheetContent() {
                 modifier = Modifier.align(Alignment.CenterHorizontally),
             )
             Text(
-                text = "Arigatou! :3",
+                text = "Thank you!",
                 fontSize = 36.sp,
                 lineHeight = 40.sp,
                 fontWeight = FontWeight.Bold,
@@ -106,7 +105,7 @@ private fun DonateSheetContent() {
             )
             Spacer(Modifier.height(4.dp))
             Text(
-                text = "Here’s a way to support and donate to us!",
+                text = "Connect with us on our socials!",
                 fontSize = 14.sp,
                 fontWeight = FontWeight.Bold,
                 letterSpacing = (-0.3).sp,
@@ -116,33 +115,34 @@ private fun DonateSheetContent() {
             Spacer(Modifier.height(24.dp))
             Column(verticalArrangement = Arrangement.spacedBy(10.dp)) {
                 DonateLinkRow(
-                    title = "Support us on Ko-fi",
-                    icon = R.drawable.ic_kofi,
-                    iconSize = 22.dp,
-                    onClick = { context.openUrl(KofiUrl) },
-                )
-                DonateLinkRow(
-                    title = "Support us on SociaBuzz",
-                    subtitle = "Recommended for some SEA and LATAM countries",
+                    title = "Instagram (@shivangmishraxx)",
                     icon = R.drawable.link,
-                    iconSize = 16.dp,
-                    iconTint = Color.Black,
-                    onClick = { context.openUrl(SocialBuzzUrl) },
+                    iconSize = 18.dp,
+                    onClick = { context.openUrl(InstagramUrl) },
                 )
                 DonateLinkRow(
-                    title = "Support us on Buy Me a Coffee",
-                    icon = R.drawable.ic_bmc_logo,
+                    title = "Telegram (@theshivxd)",
+                    icon = R.drawable.telegram,
                     iconSize = 20.dp,
-                    onClick = { context.openUrl(BuyMeACoffeeUrl) },
+                    onClick = { context.openUrl(TelegramUrl) },
+                )
+                DonateLinkRow(
+                    title = "GitHub (@TheAloneTeam)",
+                    icon = R.drawable.github_main,
+                    iconSize = 20.dp,
+                    onClick = { context.openUrl(GithubProfileUrl) },
                 )
             }
 
             Spacer(Modifier.height(22.dp))
             Text(
-                text = "your donation, no matter how small it is, will always be very very useful for us :3",
+                text = "Your support and feedback will always be very useful for us!",
                 fontSize = 14.sp,
                 lineHeight = 19.sp,
                 fontWeight = FontWeight.Bold,
+                letterSpacing = (-0.3).sp,
+                color = DonateSoftText,
+            )
                 letterSpacing = (-0.3).sp,
                 color = DonateSoftText,
             )

@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Mochy Wiki</title>
-<meta name="description" content="Mochy Music's wiki: how the app works, and how to make modules for it.">
+<meta name="description" content="AppleMusicPlus's wiki: how the app works, and how to make modules for it.">
 <meta name="theme-color" content="#0e0e0f">
 <link rel="icon" href="../assets/img/logo.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,7 +18,7 @@
 <div class="wiki">
 <aside class="side" id="side">
   <div class="side-head">
-    <div class="brand"><a class="brand-name" href="../" style="text-decoration:none"><img src="../assets/img/logo.svg" alt="" width="32" height="35">Mochy Music</a><span class="brand-sep"></span><span class="brand-sub">Docs</span></div>
+    <div class="brand"><a class="brand-name" href="../" style="text-decoration:none"><img src="../assets/img/logo.svg" alt="" width="32" height="35">AppleMusicPlus</a><span class="brand-sep"></span><span class="brand-sub">Docs</span></div>
     <button class="icon-btn fold press" type="button" id="sideFold" aria-label="Hide the sidebar" aria-expanded="true" aria-controls="toc"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3.5" y="4.5" width="17" height="15" rx="3.5"/><path d="M9.5 4.5v15"/><path class="arrow" d="m15.5 10-2 2 2 2"/></svg></button>
     <button class="icon-btn burger press" type="button" id="tocToggle" aria-label="Pages" aria-expanded="false" aria-controls="toc"><svg viewBox="0 0 24 24" aria-hidden="true"><path class="bars" d="M4 7h16M4 12h16M4 17h16"/><path class="cross" d="M6 6l12 12M18 6 6 18"/></svg></button>
   </div>
@@ -78,7 +78,7 @@
 <h1>Installing</h1>
 <p class="sub">getting mochy on your phone</p>
 <ol>
-  <li>go to the <a href="https://github.com/realidkroo/Mochy-Music/releases">releases page</a> and download the apk. <b>arm64</b> is for almost every phone, <b>universal</b> works everywhere but its bigger.</li>
+  <li>go to the <a href="https://github.com/TheAloneTeam/AppleMusicPlus/releases">releases page</a> and download the apk. <b>arm64</b> is for almost every phone, <b>universal</b> works everywhere but its bigger.</li>
   <li>open it, android asks if you trust the source, say yes.</li>
   <li>open mochy, it walks you thru a few steps: a username, importing (you can skip), and a check if your phone can do blur.</li>
 </ol>
@@ -946,7 +946,7 @@ half4 main(float2 p) {
     { "type": "text", "text": "A warm look for late nights." },
     { "type": "playlist", "id": "PLxxxxxxxx", "title": "Late night picks", "subtitle": "40 songs" },
     { "type": "song", "id": "dQw4w9WgXcQ", "title": "A song to start with", "artist": "Someone" },
-    { "type": "button", "text": "Join us on Discord", "link": "https://discord.gg/NTmqVphbRY" }
+    { "type": "button", "text": "Join us on Telegram", "link": "https://t.me/theshivxd" }
   ] }
 ]</code></pre>
 <div class="tbl"><table>
@@ -1313,10 +1313,10 @@ module.exports = {
 <p class="sub">get it to other people</p>
 <div class="cards">
   <a class="press" href="#modules-github"><b>GitHub releases</b><span>publish a zip named *mochyymodule*, people paste your project's link</span></a>
-  <a class="press" href="https://discord.gg/NTmqVphbRY"><b>Mochy's Bar</b><span>post the zip or the link on discord, thats where people find modules. the card at the top of the modules page goes there</span></a>
+  <a class="press" href="https://t.me/theshivxd"><b>Mochy's Bar</b><span>post the zip or the link on discord, thats where people find modules. the card at the top of the modules page goes there</span></a>
 </div>
 <h2>The catalog</h2>
-<p><b>settings → modules → add a module</b> lists the modules in <a href="https://github.com/realidkroo/Mochy-Music/blob/main/modules/catalog.json">catalog.json</a>, read straight from github, so the list grows without an app update. to get listed, open a pull request adding an entry:</p>
+<p><b>settings → modules → add a module</b> lists the modules in <a href="https://github.com/TheAloneTeam/AppleMusicPlus/blob/main/modules/catalog.json">catalog.json</a>, read straight from github, so the list grows without an app update. to get listed, open a pull request adding an entry:</p>
 <pre><code class="json">{ "modules": [ {
   "name": "My FLAC", "description": "My own library, lossless",
   "url": "https://my-flac.example", "icon": "https://my-flac.example/icon.png",
@@ -1445,10 +1445,7 @@ curl "https://my-flac.example/metadata?title=Eastside&amp;artist=benny%20blanco&
 <h1>Roadmap</h1>
 <p class="sub">what's done, what's next</p>
 <p>this is the live board i plan mochy on, so it's always up to date. drag to move around, pinch or scroll to zoom.</p>
-<div class="board">
-  <iframe title="Mochy's roadmap board on Figma" src="https://embed.figma.com/board/NWTElXRZ21LaaJotjuOe8D/Untitled?node-id=0-1&amp;embed-host=share" loading="lazy" allowfullscreen></iframe>
-</div>
-<p class="aside">plans may change as development progresses. <a href="https://www.figma.com/board/NWTElXRZ21LaaJotjuOe8D/Untitled?node-id=0-1">open the board in figma</a> to see it full screen.</p>
+<p class="aside">Plans and progress can be tracked on <a href="https://github.com/TheAloneTeam/AppleMusicPlus">GitHub</a>.</p>
 </article>
 
 <article class="page" id="devs" data-group="More" data-title="For mochy devs">
@@ -1561,15 +1558,15 @@ curl "https://my-flac.example/metadata?title=Eastside&amp;artist=benny%20blanco&
 
 <footer class="footer">
   <div class="footer-brand">
-    <a class="brand-name" href="#welcome"><img src="../assets/img/logo.svg" alt="" width="32" height="35">Mochy Music</a>
+    <a class="brand-name" href="#welcome"><img src="../assets/img/logo.svg" alt="" width="32" height="35">AppleMusicPlus</a>
     <p>not affiliated by google, apple, or other.</p>
     <span class="footer-year">2026</span>
   </div>
   <nav class="footer-links" aria-label="Mochy links">
     <a href="#welcome">Docs</a>
-    <a href="https://github.com/realidkroo/Mochy-Music">Github</a>
-    <a href="https://discord.gg/NTmqVphbRY">Join discord</a>
-    <a href="https://github.com/realidkroo/Mochy-Music/releases">Download now</a>
+    <a href="https://github.com/TheAloneTeam/AppleMusicPlus">Github</a>
+    <a href="https://t.me/theshivxd">Join Telegram</a>
+    <a href="https://github.com/TheAloneTeam/AppleMusicPlus/releases">Download now</a>
   </nav>
   <img class="footer-art" src="../assets/img/mochy-phone.webp?v=2" alt="" width="648" height="1100" loading="lazy" decoding="async">
 </footer>

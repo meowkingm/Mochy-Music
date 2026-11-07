@@ -100,16 +100,10 @@ private data class ContributorEntry(
 
 private val LeadDevs = listOf(
     LeadDevEntry(
-        name = "Roo",
-        githubUser = "realidkroo",
+        name = "Ritesh",
+        githubUser = "TheAloneTeam",
         devSpaceIndex = 0,
-        fallbackAvatar = R.drawable.frame_51_3,
-    ),
-    LeadDevEntry(
-        name = "key",
-        githubUser = "realkeichi",
-        devSpaceIndex = 1,
-        fallbackAvatar = R.drawable.dev_keycii,
+        fallbackAvatar = R.drawable.person_dev,
     ),
 )
 
@@ -182,7 +176,7 @@ private val MoreCredits = listOf(
 private val Licenses = listOf(
     LicenseEntry(
         tag = "GPL-3.0",
-        title = "Mochy Music · GNU General Public License v3.0",
+        title = "AppleMusicPlus · GNU General Public License v3.0",
         subtitle = "Free and open source software, source code on GitHub",
         url = "$GithubRepoUrl/blob/main/LICENSE",
     ),
@@ -230,27 +224,15 @@ private val Licenses = listOf(
     ),
 )
 
-//  this guy promote the app
-private val ExtraContributors = listOf(
-    ContributorEntry(
-        login = "swtstvn",
-        avatarUrl = githubAvatarUrl("swtstvn"),
-        profileUrl = "https://github.com/swtstvn",
-    ),
-)
+private val ExtraContributors = emptyList<ContributorEntry>()
 
 private val FallbackContributors = listOf(
     ContributorEntry(
-        login = "realidkroo",
-        avatarUrl = githubAvatarUrl("realidkroo"),
-        profileUrl = "https://github.com/realidkroo",
+        login = "TheAloneTeam",
+        avatarUrl = githubAvatarUrl("TheAloneTeam"),
+        profileUrl = "https://github.com/TheAloneTeam",
     ),
-    ContributorEntry(
-        login = "realkeichi",
-        avatarUrl = githubAvatarUrl("realkeichi"),
-        profileUrl = "https://github.com/realkeichi",
-    ),
-) + ExtraContributors
+)
 
 // kept in memory for the session so reopening the about sheet never hits github twice
 @Volatile
@@ -334,7 +316,7 @@ private fun ColumnScope.AboutSheetContent(
     Box(Modifier.fillMaxWidth()) {
         // zero-size layout places the spinning ring behind the top icon without pushing the column down
         VersionRing(
-            text = "MOCHY $installed",
+            text = "APPLEMUSICPLUS $installed",
             scrollProgress = { scrollState.value / ringScrollRangePx },
             modifier = Modifier
                 .align(Alignment.TopCenter)
@@ -387,7 +369,7 @@ private fun ColumnScope.AboutSheetContent(
                 )
                 Spacer(Modifier.height(4.dp))
                 Text(
-                    text = "Mochy Music | $installed",
+                    text = "AppleMusicPlus | $installed",
                     fontSize = 15.sp,
                     fontWeight = FontWeight.Bold,
                     letterSpacing = (-0.4).sp,
@@ -404,7 +386,7 @@ private fun ColumnScope.AboutSheetContent(
                     .padding(horizontal = 18.dp, vertical = 16.dp),
             ) {
                 Text(
-                    text = "Mochy Music is a music app but\nkinda cool.",
+                    text = "AppleMusicPlus is a music app but\nkinda cool.",
                     fontSize = 15.sp,
                     lineHeight = 19.sp,
                     fontWeight = FontWeight.Bold,
@@ -417,11 +399,11 @@ private fun ColumnScope.AboutSheetContent(
             Spacer(Modifier.height(8.dp))
             Column(verticalArrangement = Arrangement.spacedBy(8.dp)) {
                 AboutPillRow(
-                    text = "Support me please :3 \u2192",
+                    text = "Support development \u2192",
                     onClick = { popup.showSupportSheet() },
                 )
                 AboutPillRow(
-                    text = "Mochy Music github \u2192",
+                    text = "AppleMusicPlus GitHub \u2192",
                     onClick = { context.openUrl(GithubRepoUrl) },
                 )
             }

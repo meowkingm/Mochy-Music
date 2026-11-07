@@ -45,7 +45,7 @@ import androidx.compose.ui.unit.sp
 import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.navigation.NavController
 import com.mochyy.mochymusic.R
-import com.mochyy.mochymusic.core.updater.DiscordUrl
+import com.mochyy.mochymusic.core.updater.TelegramUrl
 import com.mochyy.mochymusic.modules.ModuleEntry
 import com.mochyy.mochymusic.ui.component.ActionPromptDialog
 import com.mochyy.mochymusic.ui.component.BetaBadge
@@ -60,8 +60,8 @@ const val ModulesRoute = "modules"
 const val ModuleRoutePattern = "module/{id}"
 fun moduleRoute(id: String) = "module/$id"
 
-/** how to make a module, the guide on mochy's wiki */
-const val ModuleDocsUrl = "https://realidkroo.github.io/Mochy-Music/wiki/#modules-types"
+/** how to make a module, the guide on wiki */
+const val ModuleDocsUrl = "https://github.com/TheAloneTeam/AppleMusicPlus"
 
 private val CardShape = RoundedCornerShape(26.dp)
 
@@ -83,8 +83,8 @@ fun ModulesScreen(navController: NavController, viewModel: ModulesViewModel = hi
     ) {
         ThirdPartyCard { context.openDevUrl(ModuleDocsUrl) }
         Spacer(Modifier.height(14.dp))
-        // mochy's bar is where people share modules, so it sits right up top
-        ModulesBarBanner { context.openDevUrl(DiscordUrl) }
+        // telegram is where people share modules
+        ModulesBarBanner { context.openDevUrl(TelegramUrl) }
         Spacer(Modifier.height(22.dp))
         Box(Modifier.fillMaxWidth().padding(horizontal = 2.dp).height(1.dp).background(Color.White.copy(alpha = 0.28f)))
         Spacer(Modifier.height(28.dp))

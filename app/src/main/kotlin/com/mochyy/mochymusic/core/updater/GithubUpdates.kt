@@ -12,16 +12,17 @@ import java.io.File
 import java.net.HttpURLConnection
 import java.net.URL
 
-const val GithubOwner = "realidkroo"
-const val GithubRepo = "Mochy-Music"
+const val GithubOwner = "TheAloneTeam"
+const val GithubRepo = "AppleMusicPlus"
 
 const val GithubProfileUrl = "https://github.com/$GithubOwner"
 const val GithubRepoUrl = "https://github.com/$GithubOwner/$GithubRepo"
-const val InstagramUrl = "https://www.instagram.com/furfurrfoxx/"
+const val InstagramUrl = "https://www.instagram.com/shivangmishraxx"
+const val TelegramUrl = "https://t.me/theshivxd"
 // Threads names follow the Instagram one
-const val ThreadsUrl = "https://www.threads.net/@furfurrfoxx"
+const val ThreadsUrl = ""
 // dev spaces hides the discord row while this is blank
-const val DiscordUrl = "https://discord.gg/NTmqVphbRY"
+const val DiscordUrl = ""
 
 private const val ReleasesApi =
     "https://api.github.com/repos/$GithubOwner/$GithubRepo/releases?per_page=20"
@@ -135,7 +136,7 @@ private suspend fun fetchReleases(): Result<List<ParsedRelease>> = withContext(D
             connectTimeout = 12_000
             readTimeout = 12_000
             setRequestProperty("Accept", "application/vnd.github+json")
-            setRequestProperty("User-Agent", "mochy-android")
+            setRequestProperty("User-Agent", "applemusicplus-android")
         }
         val json = connection.inputStream.bufferedReader().use { it.readText() }
         val releases = JSONArray(json)
@@ -250,7 +251,7 @@ suspend fun downloadApk(
             connectTimeout = 15_000
             readTimeout = 30_000
             instanceFollowRedirects = true
-            setRequestProperty("User-Agent", "mochy-android")
+            setRequestProperty("User-Agent", "applemusicplus-android")
         }
         val total = release.apkSizeBytes.takeIf { it > 0 }
             ?: connection.contentLengthLong.takeIf { it > 0 }
@@ -275,7 +276,7 @@ suspend fun downloadApk(
 }
 
 fun apkFileFor(context: Context, release: GithubRelease): File =
-    File(context.cacheDir, release.apkName ?: "mochy-update.apk")
+    File(context.cacheDir, release.apkName ?: "applemusicplus-update.apk")
 
 fun isDownloaded(context: Context, release: GithubRelease): Boolean {
     val f = apkFileFor(context, release)

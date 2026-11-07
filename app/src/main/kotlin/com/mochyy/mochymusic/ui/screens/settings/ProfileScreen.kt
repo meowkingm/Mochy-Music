@@ -166,7 +166,7 @@ import com.mochyy.mochymusic.ui.screens.recap.recapBarcodeCaption
 import com.mochyy.mochymusic.ui.screens.recap.recapBarcodePayload
 import com.mochyy.mochymusic.ui.screens.recap.recapDots
 import com.mochyy.mochymusic.ui.screens.recap.rememberRecapTime
-import com.mochyy.mochymusic.core.updater.DiscordUrl
+import com.mochyy.mochymusic.core.updater.TelegramUrl
 import com.mochyy.mochymusic.ui.screens.settings.devspace.DevAvatar
 import com.mochyy.mochymusic.ui.screens.settings.devspace.DevPeople
 import com.mochyy.mochymusic.ui.screens.settings.devspace.openDevUrl
@@ -733,7 +733,7 @@ fun ProfileScreen(navController: NavController) {
                         Spacer(Modifier.height(16.dp))
                         DeveloperCard(onClick = { navController.navigate("developer_space") })
                         Spacer(Modifier.height(16.dp))
-                        DiscordCard(onClick = { context.openDevUrl(DiscordUrl) })
+                        TelegramCard(onClick = { context.openDevUrl(TelegramUrl) })
                         Spacer(Modifier.height(28.dp))
                         Text("Settings", style = PageTitle.copy(fontSize = 15.sp), modifier = Modifier.padding(start = 2.dp, bottom = 10.dp))
                         OpenSettingsRow(onClick = { navController.navigate("mochy_settings") })
@@ -1102,7 +1102,7 @@ private fun DeveloperCard(onClick: () -> Unit) {
         }
         Spacer(Modifier.width(12.dp))
         Text(
-            "meet da dev and contributors :3",
+            "Meet the developer",
             style = TextStyle(fontFamily = InterFontFamily, fontWeight = FontWeight.Bold, fontSize = 15.sp, letterSpacing = (-0.6).sp, color = Color(0xFF9A9A9A)),
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
@@ -1112,7 +1112,7 @@ private fun DeveloperCard(onClick: () -> Unit) {
 }
 
 @Composable
-private fun DiscordCard(onClick: () -> Unit) {
+private fun TelegramCard(onClick: () -> Unit) {
     val face = 30.dp
     Row(
         verticalAlignment = Alignment.CenterVertically,
@@ -1123,18 +1123,23 @@ private fun DiscordCard(onClick: () -> Unit) {
             .clickable(onClick = onClick)
             .padding(horizontal = 16.dp, vertical = 12.dp),
     ) {
-        Image(
-            painter = painterResource(R.drawable.mochy_discord),
-            contentDescription = "Discord",
-            contentScale = ContentScale.Crop,
+        Box(
             modifier = Modifier
                 .size(face)
                 .clip(CircleShape)
-                .background(Color.White),
-        )
+                .background(Color(0xFF29B6F6)),
+            contentAlignment = Alignment.Center,
+        ) {
+            Icon(
+                painter = painterResource(R.drawable.telegram),
+                contentDescription = "Telegram",
+                tint = Color.White,
+                modifier = Modifier.size(18.dp),
+            )
+        }
         Spacer(Modifier.width(12.dp))
         Text(
-            "Join mochy’s discord server!",
+            "Join our Telegram @theshivxd",
             style = TextStyle(fontFamily = InterFontFamily, fontWeight = FontWeight.Bold, fontSize = 15.sp, letterSpacing = (-0.6).sp, color = Color.White),
             maxLines = 1,
             overflow = TextOverflow.Ellipsis,
